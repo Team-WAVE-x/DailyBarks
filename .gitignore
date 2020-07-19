@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+# I hate this
+package-lock.json
+
+# lock file
+keyword.lock

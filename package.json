@@ -1,0 +1,22 @@
+{
+  "name": "DailyBarks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Team-WAVE-x/DailyBarks.git",
+  "author": "pmh-only <pmhstudio.pmh@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.5.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "uuid": "^8.2.0"
+  }
+}

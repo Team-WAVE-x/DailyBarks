@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매일, 개소리</title>
+
+    <!-- Font Awesome -->
+    <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/1.0.0-alpha3/mdb.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/1.0.0-alpha3/mdb.min.js"></script>
+
+    <link rel="stylesheet" href="/src/main.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="d-flex w-100 justify-content-center mt-3">
+        <div class="keyword card text-center">
+          <div class="card-body">
+            <h5 class="card-title">오늘의 주제</h5>
+            <p class="card-text"><%= keyword %></p>
+            <button class="wbtn btn btn-primary" onclick="dwrite()">글쓰기</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="write d-none w-100 justify-content-center mt-3">
+        <div class="content card shadow">
+          <div class="card-body">
+            <h5 class="card-title">글 작성</h5>
+            <p class="card-text">
+              <form action="/" method="post">
+                <div class="form-outline mb-4">
+                  <input type="text" name="title" class="form-control" autocomplete="off"/>
+                  <label class="form-label" for="title">제목</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <textarea type="text" name="content" class="form-control" autocomplete="off"></textarea>
+                  <label class="form-label" for="content">내용</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text" name="author" class="form-control" autocomplete="off"/>
+                  <label class="form-label" for="author">작성자</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">전송!</button>
+              </form>
+            </p>
+          </div>
+        </div>
+      </div>
+      
+
+      <% contents.forEach((content) => { %>
+        <div class="d-flex w-100 justify-content-center m-3">
+          <div class="content card shadow">
+            <div class="card-body">
+              <h5 class="card-title"><%= content.title %></h5>
+              <p class="card-text"><%= content.content %></p>
+              <p class="author card-text">
+                <button class="btn btn-success btn-floating mr-2" onclick="vote('<%= content.id %>')"><%= content.score %></button>
+                <%= content.author %> | <%= content.createdAt %>
+              </p>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+
+    <script src="/src/main.js"></script>
+  </body>
+</html>
